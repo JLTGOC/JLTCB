@@ -30,10 +30,11 @@ script:post-response {
   
   // Set the token as an environment variable
   if (token) {
-      bru.setEnvVar('token', token);
+      bru.setGlobalEnvVar('token', token);
   }
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
