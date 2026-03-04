@@ -1,0 +1,21 @@
+meta {
+  name: Index Quotation
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{base_url}}/quotations?filter[status]=REQUESTED&search=mt
+  body: none
+  auth: inherit
+}
+
+params:query {
+  filter[status]: REQUESTED
+  search: mt
+  ~filter[status]: RESPONDED
+}
+
+settings {
+  encodeUrl: true
+}

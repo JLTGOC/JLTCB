@@ -1,0 +1,19 @@
+meta {
+  name: Destroy Article
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{base_url}}/articles/1
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

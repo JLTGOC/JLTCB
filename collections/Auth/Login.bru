@@ -1,0 +1,39 @@
+meta {
+  name: Login
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/auth/login
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  Accept: application/json
+}
+
+body:multipart-form {
+  email: client@gmail.com
+  password: client@gmail.com
+  ~email: marketing@gmail.com
+  ~email: accountspecialist@gmail.com
+}
+
+script:post-response {
+  // Parse the response JSON
+  const responseJson = res.getBody();
+  
+  // Extract the token from the response
+  const token = responseJson.data.token;
+  
+  // Set the token as an environment variable
+  if (token) {
+      bru.setEnvVar('token', token);
+  }
+}
+
+settings {
+  encodeUrl: true
+}

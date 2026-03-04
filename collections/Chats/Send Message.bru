@@ -1,0 +1,26 @@
+meta {
+  name: Send Message
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{base_url}}/conversations/019c7a1a-66da-72c6-a645-4e71067a8cb3
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+body:multipart-form {
+  type: TEXT
+  content: Send Message to Group
+  ~file: @file(/C:/Users/Ril/Downloads/2024_Acer_Consumer_Option_02_3840x2400.jpg)
+  ~file: @file()
+}
+
+settings {
+  encodeUrl: true
+}

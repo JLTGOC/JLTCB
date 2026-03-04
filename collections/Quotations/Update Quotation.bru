@@ -1,0 +1,41 @@
+meta {
+  name: Update Quotation
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{base_url}}/quotations/9
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+body:multipart-form {
+  company[name]: Miranda
+  company[address]: Balibago
+  company[contact_person]: binsu
+  company[contact_number]: 09111111111
+  company[email]: test@gmail.com
+  service[type]: EXPORT
+  service[transport_mode]: SEA
+  service[options][0]: CUSTOMS CLEARANCE
+  service[options][1]: PROJECT CARGO
+  commodity[commodity]: CASTABLE 16 REFRACTOR
+  commodity[cargo_type]: LCL
+  commodity[cargo_volume]: 10
+  commodity[container_size]: 1X20
+  shipment[origin]: China
+  shipment[destination]: Metro Manila
+  files[]: @file(/C:/Users/Ril/Downloads/clientDoc1.pdf|/C:/Users/Ril/Downloads/clientDoc2.pdf)
+  removed_files[]: 4
+  removed_files[]: 10
+  ~: 
+}
+
+settings {
+  encodeUrl: true
+}

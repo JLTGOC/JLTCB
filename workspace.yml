@@ -1,0 +1,28 @@
+opencollection: 1.0.0
+info:
+  name: "JLTCB"
+  type: workspace
+
+collections:
+  - name: "Chats"
+    path: "collections/Chats"
+  - name: "Dashboard"
+    path: "collections/Dashboard"
+  - name: "Home"
+    path: "collections/Home"
+  - name: "Quotations"
+    path: "collections/Quotations"
+  - name: "Reels"
+    path: "collections/Reels"
+  - name: "Shipments"
+    path: "collections/Shipments"
+  - name: "User"
+    path: "collections/User"
+  - name: "Auth"
+    path: "collections/Auth"
+  - name: "Articles"
+    path: "collections/Articles"
+
+specs:
+
+docs: ''

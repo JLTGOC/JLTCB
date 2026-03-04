@@ -1,0 +1,48 @@
+meta {
+  name: Store Quotation
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/quotations
+  body: json
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+      "company": {
+          "name": "SPCF",
+          "address": "Balibago",
+          "contact_person": "tester, test",
+          "contact_number": "09111111111",
+          "email": "test@gmail.com"
+      },
+      "service": {
+          "type": "EXPORT",
+          "transport_mode": "SEA",
+          "options" : [
+              "CUSTOMS CLEARANCE",
+              "PROJECT CARGO"
+          ]
+      },
+      "commodity": {
+          "commodity": "CASTABLE 16 REFRACTOR",
+          "cargo_type": "LCL",
+          "container_size": "1X20"
+      },
+      "shipment": {
+          "origin": "China",
+          "destination": "Metro Manila"
+      }   
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Index Quotation Files
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{base_url}}/quotations/3/files?type=REQUESTED
+  body: none
+  auth: inherit
+}
+
+params:query {
+  type: REQUESTED
+  ~type: PROPOSAL
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}

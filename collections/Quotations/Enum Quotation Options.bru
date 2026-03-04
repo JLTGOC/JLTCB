@@ -1,0 +1,40 @@
+meta {
+  name: Enum Quotation Options
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/quotations/enum-options
+  body: text
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+body:text {
+  {
+      "companyName": "SPCF",
+      "companyAddress": "Balibago",
+      "contactPerson": "tester, test",
+      "contactNumber": "09111111111",
+      "email": "test@gmail.com",
+      "serviceType": "IMPORT",
+      "transportMode": "SEA",
+      "serviceOptions" : [
+          "CUSTOMS CLEARANCE",
+          "PROJECT CARGO"
+      ],
+      "commodity": "CASTABLE 16 REFRACTOR",
+      "cargoVolume": "LCL",
+      // "containerSize": "",
+      "origin": "China",
+      "destination": "Metro Manila"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

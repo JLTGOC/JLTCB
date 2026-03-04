@@ -1,0 +1,29 @@
+meta {
+  name: Store Article
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/articles
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  title: Sample Title
+  image: @file(/C:/Users/geral_4vw/OneDrive/Pictures/Screenshots 1/Screenshot 2025-03-04 162733.png)
+  content: This is a sample content.
+}
+
+settings {
+  encodeUrl: true
+}

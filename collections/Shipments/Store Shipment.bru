@@ -1,0 +1,25 @@
+meta {
+  name: Store Shipment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/shipments
+  body: json
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+      "reference_number": "QT-02-2026-004"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

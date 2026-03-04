@@ -1,0 +1,23 @@
+meta {
+  name: Index Messages per Chat
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/conversations/019c2b48-3d4e-7128-b914-6f502d088054
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

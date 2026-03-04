@@ -1,0 +1,30 @@
+meta {
+  name: Send Message to Group
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{base_url}}/conversations/019c54a2-e1a4-707e-9a0e-188f3782ee6d/messages
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  type: TEXT
+  content: Hello, how are you?
+  ~file: @file(/F:/Downloads/CLIENT BILLING LIST.png)
+  ~file: @file(/F:/Downloads/UNIVERSITY-CLOSED-GYM-EMERGENCY-EXIT.pdf)
+}
+
+settings {
+  encodeUrl: true
+}

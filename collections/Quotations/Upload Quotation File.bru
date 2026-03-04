@@ -1,0 +1,28 @@
+meta {
+  name: Upload Quotation File
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/quotations/5/upload
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+  ~Content-Type: multipart/form-data
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file(/F:/Downloads/CamScanner 12-05-2025 09.10.pdf)
+}
+
+settings {
+  encodeUrl: true
+}

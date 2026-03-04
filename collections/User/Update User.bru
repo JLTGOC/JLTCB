@@ -1,0 +1,33 @@
+meta {
+  name: Update User
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{base_url}}/users/1
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "first_name": "Gerald",
+      "last_name": "Flores",
+      "position": "Client",
+      "contact_number": "09993560599",
+      "email": "sample@gmail.com"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

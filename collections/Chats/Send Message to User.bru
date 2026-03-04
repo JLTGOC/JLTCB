@@ -1,0 +1,30 @@
+meta {
+  name: Send Message to User
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base_url}}/users/3/messages
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  type: TEXT
+  content: Hello, I love you?
+  ~file: @file(/F:/Downloads/CLIENT ALL TRANSACTION.png)
+  ~file: @file(/F:/Downloads/Hogwarts_Backend_Assessment.pdf)
+}
+
+settings {
+  encodeUrl: true
+}

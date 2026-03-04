@@ -1,0 +1,15 @@
+meta {
+  name: Show User
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/users/show
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

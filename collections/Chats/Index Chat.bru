@@ -1,0 +1,27 @@
+meta {
+  name: Index Chat
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/conversations
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~search: Elnora
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

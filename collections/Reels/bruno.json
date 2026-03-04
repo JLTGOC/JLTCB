@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Reels",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

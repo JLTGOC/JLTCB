@@ -1,0 +1,44 @@
+meta {
+  name: Chat with Quotation
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/quotations/10/chat
+  body: text
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:text {
+  {
+      "companyName": "SPCF",
+      "companyAddress": "Balibago",
+      "contactPerson": "tester, test",
+      "contactNumber": "09111111111",
+      "email": "test@gmail.com",
+      "serviceType": "EXPORT",
+      "transportMode": "SEA",
+      "serviceOptions" : [
+          "CUSTOMS CLEARANCE",
+          "PROJECT CARGO"
+      ],
+      "commodity": "CASTABLE 16 REFRACTOR",
+      "cargoVolume": "LCL",
+      // "containerSize": "",
+      "origin": "China",
+      "destination": "Metro Manila"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
